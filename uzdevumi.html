@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS sandbox</title>
+
+</head>
+<body>
+<script>
+	alert("JS in action!");
+
+function substrings(str){
+  var substr = [];
+  for (var x = 0; x < str.length; x++) 
+  {
+    for (var y = x + 1; y <= str.length; y++) 
+    {
+      substr.push(str.substring(x,y));
+    }
+  }
+ return substr;
+}
+alert(substrings("dog"));
+
+
+
+function find_longest_word(str)
+{
+  var array1 = str.match(/\w[a-z]{0,}/gi);
+  var result = array1[0];
+
+  for(var x = 1 ; x < array1.length ; x++)
+  {
+    if(result.length < array1[x].length)
+    {
+    result = array1[x];
+    } 
+  }
+  return result;
+}
+alert(find_longest_word('Web Development Tutorial'));
+
+
+
+
+
+function makeid(l)
+{
+var text = "";
+var char_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+for(var i=0; i < l; i++ )
+{  
+text += char_list.charAt(Math.floor(Math.random() * char_list.length));
+}
+return text;
+}
+console.log(makeid(8));
+
+
+
+</script>
+</body>
+</html>
+
+
